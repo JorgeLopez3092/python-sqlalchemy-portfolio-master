@@ -4,10 +4,14 @@ from werkzeug import Response
 from models.Project import Project
 from models.database import db, app
 
+import os
+
 
 @app.route('/')
 def index() -> str:
     print(app.template_folder)
+    print(os.listdir('templates'))  # This should list all files in the templates directory
+    print(os.path.isfile('templates/index2.html'))  # This should return True if the file exists
     # return 'hello world!'
     return render_template('index.html')
 
