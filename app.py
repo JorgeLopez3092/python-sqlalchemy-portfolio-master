@@ -20,8 +20,11 @@ def project_create() -> str:
 
 
 @app.route('/projects/<id>')
-def project_details() -> str:
-    return 'Hello World!'
+def project_details(id) -> str:
+    project = Project.query.get_or_404(id)
+    project_skills = project.skills.split(',')
+    date = project.date.strftime("%b %Y")
+    return render_template('detail.html', project=project, project_skills=project_skills, date=date)
 
 
 @app.route('/projects/<id>/edit')
