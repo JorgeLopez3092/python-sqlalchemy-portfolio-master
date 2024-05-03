@@ -1,29 +1,54 @@
-# My Portfolio
+# Portfolio Web Application
 
-## Description
+This project involves creating an interface for a portfolio web application where users can view a list of projects, add new projects, edit existing ones, and delete projects. The application also allows users to view detailed information about each project, including its title, date, description, skills practiced, and a link to the project's GitHub repository.
 
-Placeholder for description
+## How to Run Locally
 
-### Projects
-
-- Project 1: Description of project
-- Project 2: Description of project
-- Project 3: Description of project
-
-## Getting Started
-
-instructions to download and run local server for portfolio
-
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-- Python
-- etc.
-
-### Installing
-1. Clone the repo
-2. commands for user
+1. **Navigate to the Project Directory:**
 
 ```bash
-git clone https://github.com/jorgelopez3092/python-sqlalchemy-portfolio-master
+cd portfolio-web-app
+```
+2. **Set Up Virtual Environment:**
+```bash
+python3 -m venv venv
+```
+
+3. **Activate Virtual Environment (Mac/Linux):**
+```bash
+source venv/bin/activate
+```
+
+Activate Virtual Environment (Windows):
+```bash
+venv\Scripts\activate
+```
+  
+4. **Install Dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+5. **Run the Application:**
+```bash
+python app.py
+```
+
+6. **Access the Application:**
+
+    Open a web browser and go to `http://localhost:5000` to view the application.
+
+## What I Learned
+
+- Building a web application using Flask framework
+- Integrating SQLAlchemy for database management
+- Implementing CRUD (Create, Read, Update, Delete) functionalities
+- Working with HTML templates and CSS styling
+- Writing clean and readable Python code adhering to PEP 8 guidelines
+
+
+
+
+
+
+ 

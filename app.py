@@ -5,8 +5,6 @@ from models.Project import Project
 from models.database import db, app
 import datetime
 
-import os
-
 
 @app.context_processor
 def inject_projects():
@@ -18,6 +16,11 @@ def inject_projects():
 def index() -> str:
     # return 'hello world!'
     return render_template('index.html')
+
+
+@app.route('/about')
+def about() -> str:
+    return render_template('about.html')
 
 
 @app.route('/projects/new', methods=['GET', 'POST'])
@@ -65,6 +68,11 @@ def project_delete(id) -> Response:
     db.session.delete(project)
     db.session.commit()
     return redirect(url_for('index'))
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', msg=error), 404
 
 
 if __name__ == '__main__':
